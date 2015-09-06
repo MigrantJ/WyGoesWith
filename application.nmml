@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- metadata, make sure 'package' is at least 2 segments (ie. com.myproject) -->
+	<!-- app file is the name of the app associated with the icon as viewed on the phone's desktop --> 
+	<app file="WyGoesWith" title="Wy Goes With" main="com.jimgrant.test.Main" package="com.zudopod.wygoeswith" 
+		version="0.0.1" company="Mandi Grant" />
+		
+	<!-- output -->
+	<!-- mandi: changed width from "320" and height from "480", nme documentation says 0 is fullscreen -->
+	<window width="320" height="480" if="web" />
+	<window width="320" height="480" orientation="portrait" if="mobile" />
+	<window fps="30" />
+	
+	<set name="BUILD_DIR" value="bin" />
+	
+	<!-- classpath, haxe libs -->
+	<classpath name="src" />
+	<haxelib name="nme" />
+	<haxelib name="swf" />
+	<haxelib name="actuate" />
+	<!-- <haxelib name="box2d" /> -->
+	<source path="src" />
+	<source path="src-spinehx" />
+	<!-- <include path="D:\SVN\WyGoesWith_Haxe\src\com\jimgrant\test\spinehx" /> -->
+	
+	<!-- assets -->
+	<icon name="assets/ios_wgwIcon_1024.png" height="1024" width="1024" />
+	<icon name="assets/ios_wgwIcon_512.png" height="512" width="512" />
+	<icon name="assets/ios_wgwIcon_144.png" height="144" width="144" />
+	<icon name="assets/ios_wgwIcon_114.png" height="114" width="114" />
+	<icon name="assets/ios_wgwIcon_72.png" height="72" width="72" />
+	<icon name="assets/ios_wgwIcon_57.png" height="57" width="57" />
+	
+	<assets path="assets" include="*" exclude="nme.svg" />
+	
+	
+	<!-- DLLs -->
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	<ndll name="nme" haxelib="nme" />
+	
+	<!-- Windows app: hide console -->
+	<!--<setenv name="no_console" value="1" />-->
+	<set name="SHOW_CONSOLE" value="1"/>
+	<haxedef name="SHOW_CONSOLE"/>
+</project>
